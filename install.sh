@@ -7,6 +7,8 @@ _HERE=$(
 	pwd
 )
 
+_ME=$(whoami)
+
 # Install zsh
 if ! command -v zsh &> /dev/null
 then
@@ -28,10 +30,10 @@ fi
 
 # Copy dotfiles to home directory
 ln -sf ${_HERE}/tmux.conf ~/.tmux.conf
-ln -sf ${_HERE}/zshrc /etc/zsh/zshrc
+ln -sf ${_HERE}/zshrc ~/.zshrc
 
 # Change default shell to zsh
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $_ME
 
 # Display a message
 echo "Installation complete. Please log out and log back in to start using zsh and tmux with the new configuration."
