@@ -32,8 +32,7 @@ chmod +x install.sh
 2. Installs zsh, tmux, and required plugins
 3. Installs Oh-My-Zsh framework
 4. Creates symlinks for configuration files
-5. Appends zsh auto-switch to .bashrc (preserving existing configurations)
-6. Sets zsh as default shell
+5. Modifies .bashrc to auto-switch to zsh on login
 
 ## Files
 
@@ -45,9 +44,11 @@ chmod +x install.sh
 
 The installer preserves your existing `.bashrc` and appends a small snippet that:
 
-- Automatically switches to zsh when opening a bash shell
+- Automatically switches to zsh when you log in
 - Only switches if zsh is installed and available
 - Won't add duplicate entries if you run the installer multiple times
+
+No need to change your default shell with `chsh` - the auto-switch handles everything!
 
 ## Post-installation
 

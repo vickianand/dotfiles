@@ -93,20 +93,15 @@ fi
 EOF
 fi
 
-# Change default shell to zsh
-if [ "$SHELL" != "$(which zsh)" ]; then
-    echo "Changing default shell to zsh..."
-    chsh -s $(which zsh) $_ME && echo "Default shell changed to zsh" || echo "Failed to change shell. You may need to run: chsh -s $(which zsh)"
-else
-    echo "zsh is already the default shell"
-fi
-
 # Display a message
 echo ""
 echo "==================================="
 echo "Installation complete!"
 echo "Backups saved to: $BACKUP_DIR"
 echo ""
-echo "Please log out and log back in to start using zsh as your default shell."
-echo "Or run: exec zsh"
+echo "To start using zsh:"
+echo "  - Run: exec zsh"
+echo "  - Or simply log out and back in"
+echo ""
+echo "Your shell will automatically switch to zsh on login."
 echo "==================================="
