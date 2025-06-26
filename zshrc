@@ -1,13 +1,3 @@
-# Enable zsh
-if [ -t 1 ]; then
-  exec zsh
-fi
-
-# Set ZSH as default shell if it's not already
-if [ -n "$BASH_VERSION" ]; then
-  chsh -s $(which zsh)
-fi
-
 # Add your custom zsh configuration here
 # For example, enable command auto-correction
 ENABLE_CORRECTION="true"
