@@ -1,27 +1,33 @@
-# Enable zsh
-if [ -t 1 ]; then
-  exec zsh
-fi
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Set ZSH as default shell if it's not already
-if [ -n "$BASH_VERSION" ]; then
-  chsh -s $(which zsh)
-fi
+# Set name of the theme to load
+ZSH_THEME="robbyrussell"
 
-# Add your custom zsh configuration here
-# For example, enable command auto-correction
+# Oh-My-Zsh configuration
+# Enable command auto-correction
 ENABLE_CORRECTION="true"
 
+# Source Oh-My-Zsh
+if [ -f $ZSH/oh-my-zsh.sh ]; then
+  source $ZSH/oh-my-zsh.sh
+fi
+
 # Load zsh-syntax-highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Load zsh-autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # Add your custom aliases
 alias ll='ls -lah'
-
-# Source the Oh-My-Zsh configuration if available
-if [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]; then
-  source ~/.oh-my-zsh/oh-my-zsh.sh
-fi
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gpl='git pull'
+alias gco='git checkout'
